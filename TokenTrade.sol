@@ -46,7 +46,11 @@ contract TokenTrade is Ownable {
         ) public {
         require(tokenFirstTraderSending != tokenSecondTraderMustSend 
         && amountFirstTraderSending > 0 
-        && amountSecondTraderMustSend > 0 );
+        && amountSecondTraderMustSend > 0 &&
+        isFirstTrader!=0 &&
+        isSecondTrader!=0 &&
+        tokenFirstTraderSending!=0 &&
+        tokenSecondTraderMustSend!=0);
         firstTrader = isFirstTrader;
         firstTraderDepositToken = tokenFirstTraderSending;
         firstTraderDepositAmount = amountFirstTraderSending;
@@ -63,12 +67,6 @@ contract TokenTrade is Ownable {
         uint amountFirstTraderSending,
         uint amountSecondTraderMustSend
         ) {
-        require (isFirstTrader!=0 &&
-         isSecondTrader!=0 &&
-         tokenFirstTraderSending!=0 &&
-         tokenSecondTraderMustSend!=0 && 
-         amountFirstTraderSending!=0 &&
-         amountSecondTraderMustSend!=0);
         isFirstTrader = firstTrader;
         tokenFirstTraderSending = firstTraderDepositToken;
         amountFirstTraderSending = firstTraderDepositAmount;
