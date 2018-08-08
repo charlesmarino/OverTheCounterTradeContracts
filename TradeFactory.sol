@@ -61,7 +61,7 @@ contract TradeFactory is Ownable {
         uint firstTokenBalance,
         uint secondTokenBalance) {
         TokenTrade t = TokenTrade(addr);
-        (firstTokenBalance, secondTokenBalance) = t.getInfo();
+        (firstTokenBalance, secondTokenBalance) = t.getTokenBalances();
         return (firstTokenBalance, secondTokenBalance);
     }
 
